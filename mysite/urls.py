@@ -19,7 +19,7 @@ from rptsys import views as repsysviews
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'rptsys/', include('rptsys.urls')),
+    # url(r'rptsys/', include('rptsys.urls')),
     url(r'^$', repsysviews.index, name='rptsysindex'),
     url(r'^login/$', repsysviews.login, name='rptsyslogin'),
     url(r'^content/$', repsysviews.content, name='rptsyscontent'),
