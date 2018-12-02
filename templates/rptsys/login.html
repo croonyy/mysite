@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ins Report|Login page</title>
+<link rel="stylesheet" href="{% static 'rptsys/css/login.css'%}">
+
+
+</head>
+
+<body>
+  <div class="wrapper">
+	<div class="container">
+		<h1>Welcome</h1>
+
+		<form action='/login/' method='POST'>
+			<input type="text" placeholder="Username" name="username" autofocus>
+			<input type="password" placeholder="Password" name="password">
+			<button type="submit" id="login-button">登录（Login）</button>
+		</form>
+	</div>
+
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+{#<script src='/static/rptsys/js/jquery.min.js'></script>#}
+{#<script  src="/static/rptsys/js/login.js"></script>#}
+</body>
+</html>
