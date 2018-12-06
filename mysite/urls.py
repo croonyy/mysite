@@ -15,13 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-from rptsys import views as repsysviews
+from rptsys import views as rptsysviews
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'rptsys/', include('rptsys.urls')),
-    url(r'^$', repsysviews.index, name='rptsysindex'),
-    url(r'^login/$', repsysviews.login, name='rptsyslogin'),
-    url(r'^content/$', repsysviews.content, name='rptsyscontent'),
-    url(r'^logout/$', repsysviews.logout, name='rptsyslogout')
+    url(r'^$', rptsysviews.index, name='rptsysindex'),
+    url(r'^login/$', rptsysviews.login, name='rptsyslogin'),
+    url(r'^content/$', rptsysviews.content, name='rptsyscontent'),
+    url(r'^logout/$', rptsysviews.logout, name='rptsyslogout'),
+
+
+
+    url(r'^test/$', rptsysviews.test, name='test')
 ]

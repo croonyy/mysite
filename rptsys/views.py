@@ -33,6 +33,7 @@ def login(request):
         if user:
             request.session['userid'] = user.pk
             request.session['username'] = uname
+            print request.session['username']
             return redirect(reverse('rptsyscontent'))
             # return render(request,'rptsys/content.html')
         else:
@@ -53,3 +54,8 @@ def logout(request):
         pass
 
     return redirect(reverse('rptsyslogin'))
+
+
+
+def test(request):
+    return render(request, 'rptsys/base.html')
