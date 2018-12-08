@@ -1,3 +1,5 @@
+# encoding:utf-8
+
 """mysite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,15 +15,18 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url,include
-from django.contrib import admin
+from django.conf.urls import url
 from rptsys import views as rptsysviews
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^rptsys/', include('rptsys.urls')),
-    url(r'^$', rptsysviews.login, name='rptsyslogin'),
-    # url(r'rptsys/', include('rptsys.urls')),
+    url(r'test_rptsys', rptsysviews.test),
+    url(r'^$', rptsysviews.index, name='rptsysindex'),
+    url(r'^login/$', rptsysviews.login, name='rptsyslogin'),
+    url(r'^logout/$', rptsysviews.logout, name='rptsyslogout'),
+    url(r'^content/$', rptsysviews.content, name='rptsyscontent'),
+
+
+
 
     url(r'^test/$', rptsysviews.test, name='test')
 ]

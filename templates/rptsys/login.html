@@ -6,19 +6,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ins Report|Login page</title>
 <link rel="stylesheet" href="{% static 'rptsys/css/login.css'%}">
+{#<link rel="stylesheet" href="{% static 'rptsys/css/init.css'%}">#}
+{#<script src="{% static 'rptsys/js/jquery-2.2.4.min.js'%}"></script>#}
+
+<script type="text/javascript">
+    window.onload=function () {
+        {#alert("aaa");#}
+        input_list=document.getElementsByTagName('input');
+        for (i in input_list){
+            i.style.background="rgba(255, 255, 255, 0.2)";
+        }
+    }
 
 
+</script>
 </head>
 
 <body>
   <div class="wrapper">
+  <div class="wrapper">
 	<div class="container">
 		<h1>Welcome</h1>
 
-		<form action='/login/' method='POST'>
+{#		<form action='/rptsys/login/' method='POST'>#}
+		<form action='{% url 'rptsyslogin' %}' method='POST'>
 {#            autofocus#}
-			<input type="text" placeholder="Username" name="username">
-			<input type="password" placeholder="Password" name="password">
+			<input id="aaa" type="text" placeholder="Username" name="username" autocomplete="off">
+			<input type="password" placeholder="Password" name="password" autocomplete="off">
 			<button type="submit" id="login-button">登录</button>
 		</form>
 	</div>
@@ -36,7 +50,9 @@
 		<li></li>
 	</ul>
 </div>
-{#<script src='/static/rptsys/js/jquery.min.js'></script>#}
-{#<script  src="/static/rptsys/js/login.js"></script>#}
+<script src="{% static 'rptsys/js/jquery.min.js' %}"></script>
+<script  src="{% static 'rptsys/js/login.js' %}"></script>
 </body>
+
+
 </html>
