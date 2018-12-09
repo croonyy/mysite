@@ -1,1 +1,25 @@
 {% extends 'rptsys/base.html' %}
+
+{% block head_end %}
+    {% for jsfile_name in script_list %}
+        <script src="{{ host }}/{{ jsfile_name }}.js"></script>
+    {% endfor %}
+{% endblock %}
+
+
+
+{% block page-content %}
+    <div class="col-lg-12">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Line Chart</h3>
+            </div>
+            <div class="panel-body">
+                <div>
+                  {{ myechart|safe }}
+                </div>
+{#                <p>你好</p>#}
+            </div>
+        </div>
+    </div>
+{% endblock %}

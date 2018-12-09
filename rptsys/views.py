@@ -9,7 +9,8 @@ from django.http import HttpResponse
 
 import math
 from django.template import loader
-from pyecharts import Line3D
+from pyecharts import Line3D, Line, Bar
+from utils.tools import get_data
 
 REMOTE_HOST = "https://pyecharts.github.io/assets/js"
 
@@ -50,14 +51,31 @@ def login(request):
 
 @login_required
 def content(request):
-    return render(request, 'rptsys/content.html')
+    # template = loader.get_template('echarts/test.html')
+    df_list = get_data()
+    # print df_list[0]
+    # print type(df_list[0])
+    # print (type(df_list[0].iloc[:, 0]))
+    # print (type(df_list[0].icol(0)))
+    # print (df_list[0]['日期'])
+    # print (type(df_list[0].iloc(1)))
+
+    line_d = Bar()
+    line_d.add(r'line chart', df_list[0].iloc[:, 0], [15,14,17,12,12])
+    context = dict(
+        myechart=line_d.render_embed(),
+        host=REMOTE_HOST,
+        script_list=line_d.get_js_dependencies()
+    )
+    return render(request, 'rptsys/content.html', context)
+    # return render(request, 'rptsys/content.html')
 
 
 def logout(request):
     try:
         del request.session["username"]
-    except:
-        pass
+    except Exception, e:
+        print e
 
     return redirect(reverse('rptsyslogin'))
 
@@ -70,8 +88,8 @@ def test(request):
 
 def line3d():
     _data = []
-    for t in range(0, 25000):
-        _t = t / 1000
+    for t in range(0, 25):
+        _t = t / 10
         x = (1 + 0.25 * math.cos(75 * _t)) * math.cos(_t)
         y = (1 + 0.25 * math.cos(75 * _t)) * math.sin(_t)
         z = _t + 2.0 * math.sin(75 * _t)
@@ -79,7 +97,7 @@ def line3d():
     range_color = [
         '#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf',
         '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
-    line3d = Line3D("3D line plot demo", width=1200, height=600)
+    line3d = Line3D("3D line plot demo", width=600, height=300)
     line3d.add("", _data, is_visualmap=True,
                visual_range_color=range_color, visual_range=[0, 30],
                is_grid3D_rotate=True, grid3D_rotate_speed=180)

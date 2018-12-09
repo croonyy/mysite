@@ -5,15 +5,168 @@
 <head>
     <meta charset="utf-8">
     <title>Proudly presented by PycCharts</title>
+    <link href="/static/rptsys/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <!--<link href="/static/rptsys/css/iview.css" rel="stylesheet">-->
+
+
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <!--<link href="/static/rptsys/css/nifty.css" rel="stylesheet">-->
+    <link href="/static/rptsys/css/nifty.min.css" rel="stylesheet">
+
+
+    <!--ionicons-->
+    <link rel="stylesheet" href="/static/rptsys/plugins/ionicons/css/ionicons.css">
+
+
+    <!--themify-icons-->
+    <link rel="stylesheet" href="/static/rptsys/plugins/themify-icons/themify-icons.css">
+
+    <!--modify.css-->
+    <link rel="stylesheet" href="/static/rptsys/css/modify.css">
+
+
+    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
+    <!--<link href="/static/rptsys/css/nifty-icons.min.css" rel="stylesheet">-->
+
+
+    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
+    <!--<link href="/static/rptsys/plugins/ionicons/ionicons.min.css" rel="stylesheet">-->
+
+
+    <!--Demo [ DEMONSTRATION ]-->
+    <!--<link href="/static/rptsys/css/demo/nifty-demo.min.css" rel="stylesheet">-->
+
+
+    <!--Morris.js [ OPTIONAL ]-->
+    <!--<link href="/static/rptsys/plugins/morris-js/morris.min.css" rel="stylesheet">-->
+
+
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+
+
+    <!--jQuery [ REQUIRED ]-->
+    <script src="/static/rptsys/js/jquery-2.2.4.min.js"></script>
+
+
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="/static/rptsys/js/bootstrap.min.js"></script>
+
+
+    <!--NiftyJS [ RECOMMENDED ]-->
+    <script src="/static/rptsys/js/vue.min.js"></script>
+
+
+    <!--NiftyJS [ RECOMMENDED ]-->
+    <script src="/static/rptsys/js/nifty.min.js"></script>
+
+
+    <!--VUE [ RECOMMENDED ]-->
+    <!--<script src="/static/rptsys/js/vue.min.js"></script>-->
+
+
+    <!--iview [ RECOMMENDED ]-->
+    <!--<script src="/static/rptsys/js/iview.min.js"></script>-->
+
+
+    <!--echarts [ RECOMMENDED ]-->
+    <script src="/static/rptsys/js/echarts.js"></script>
+
+
+    <!--=================================================-->
+
+    <!--Demo script [ DEMONSTRATION ]-->
+    <!--<script src="/static/rptsys/js/demo/nifty-demo.min.js"></script>-->
+
+
+    <!-- plugins -->
+    <!--Pace - Page Load Progress Par [OPTIONAL]-->
+    <link href="/static/rptsys/plugins/pace/pace.min.css" rel="stylesheet">
+    <script src="/static/rptsys/plugins/pace/pace.min.js"></script>
+
+    <!--Morris.js [ OPTIONAL ]  jquery图表插件-->
+    <!--<script src="/static/rptsys/plugins/morris-js/morris.min.js"></script>-->
+    <!--<script src="/static/rptsys/plugins/morris-js/raphael-js/raphael.min.js"></script>-->
+
+
+    <!--Sparkline [ OPTIONAL ]-- 图表插件 -->
+    <!--<script src="/static/rptsys/plugins/sparkline/jquery.sparkline.min.js"></script>-->
+
+
+    <!--Flot Chart [ OPTIONAL 图表插件]-->
+    <!--<script src="/static/rptsys/plugins/flot-charts/jquery.flot.min.js"></script>-->
+    <!--<script src="/static/rptsys/plugins/flot-charts/jquery.flot.resize.min.js"></script>-->
+
+
+    <!--Flot Pie Chart [ OPTIONAL ]-->
+    <!--<script src="/static/rptsys/plugins/flot-charts/jquery.flot.pie.min.js"></script>-->
+
+
+    <!--Gauge js [ OPTIONAL ] 仪表盘插件 -->
+    <!--<script src="/static/rptsys/plugins/gauge-js/gauge.min.js"></script>-->
+
+
+    <!--Easy Pie Chart [ OPTIONAL ] 图表插件 -->
+    <!--<script src="/static/rptsys/plugins/easy-pie-chart/jquery.easypiechart.min.js"></script>-->
+
+
+    <!--Charts [ SAMPLE ]-->
+    <!--<script src="/static/rptsys/js/demo/charts.js"></script>-->
+    <!--<link rel="stylesheet" href="../../static/rptsys/plugins/ionicons/css/ionicons.min.css">-->
+    <!--<link rel="stylesheet" href="../../static/rptsys/css/nifty.min.css">-->
+
+
+    <!--<link rel="stylesheet" href="/static/rptsys/plugins/ionicons/css/ionicons.min.css">-->
+    <!--<link rel="stylesheet" href="/static/rptsys/css/nifty.min.css">-->
+
+
+    <!--=================================================
+
+    REQUIRED
+    You must include this in your project.
+
+
+    RECOMMENDED
+    This category must be included but you may modify which plugins or components which should be included in your project.
+
+
+    OPTIONAL
+    Optional plugins. You may choose whether to include it in your project or not.
+
+
+    DEMONSTRATION
+    This is to be removed, used for?demonstration purposes only.?This category must not be included in your project.
+
+
+    SAMPLE
+    Some script samples which explain how to initialize plugins or components. This category should not be included in your project.
+
+
+    Detailed information and more samples can be found in the document.
+
+    =================================================-->
     {% for jsfile_name in script_list %}
         <script src="{{ host }}/{{ jsfile_name }}.js"></script>
     {% endfor %}
 </head>
 
 <body>
-  {{ myechart|safe }}
-
-
+    <div class="col-lg-12">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Line Chart</h3>
+            </div>
+            <div class="panel-body">
+                <div>
+                  {{ myechart|safe }}
+                </div>
+{#                <p>你好</p>#}
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

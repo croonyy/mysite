@@ -45,8 +45,8 @@ body :-ms-input-placeholder {
 }
 .wrapper {
   background: #50a3a2;
-  background: -webkit-gradient(linear, left top, right bottom, from(#50a3a2), to(#ffbd0f));
-  background: linear-gradient(to bottom right, #50a3a2 0%, #fff22e 100%);
+  background: -webkit-gradient(linear, left top, right bottom, from(#48a304), to(#ffbd0f));
+  background: linear-gradient(to bottom right, #2fa303 0%, #fff22e 100%);
   position: absolute;
   /*top: 50%;*/
   left: 0;
@@ -102,9 +102,9 @@ form input:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 form input:focus {
-  background-color: #b1f3e6;
+  background-color: rgba(255, 255, 255, 0.2);
   width: 300px;
-  color: #0e867a;
+  color: #000000;
 }
 form button {
   -webkit-appearance: none;
