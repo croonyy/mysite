@@ -60,8 +60,9 @@ def content(request):
     # print (df_list[0]['日期'])
     # print (type(df_list[0].iloc(1)))
 
-    line_d = Bar()
-    line_d.add(r'line chart', df_list[0].iloc[:, 0], [15,14,17,12,12])
+    line_d = Bar(width='100%', height=300)
+    # line_d.add(r'line chart', df_list[0].iloc[:, 0], [15,14,17,12,12])
+    line_d.add(r'line chart', [1, 3, 3, 4, 5], [15,14,17,12,12])
     context = dict(
         myechart=line_d.render_embed(),
         host=REMOTE_HOST,
@@ -81,7 +82,7 @@ def logout(request):
 
 
 def test(request):
-    return render(request, 'rptsys/base.html')
+    return render(request, 'rptsys/test.html')
 
 
 # echarts test
@@ -97,7 +98,7 @@ def line3d():
     range_color = [
         '#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf',
         '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
-    line3d = Line3D("3D line plot demo", width=600, height=300)
+    line3d = Line3D("3D line plot demo", width=1200, height=800)
     line3d.add("", _data, is_visualmap=True,
                visual_range_color=range_color, visual_range=[0, 30],
                is_grid3D_rotate=True, grid3D_rotate_speed=180)
